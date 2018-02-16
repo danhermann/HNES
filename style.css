@@ -8,6 +8,7 @@
 *
 */
 
+
 body {
   /* hide content flash */
   visibility: hidden;
@@ -31,11 +32,14 @@ body center table table {
 /*header color*/
 #header,
 .nav-drop-down {
-  background-color: #d74937;
+  /* color: #fff; nothing */
+  background-color: #565656;
 }
 /*content color*/
 #content {
-  background-color: #f6f6ef !important;
+  /* color: #d407ef;*/
+  /* background for border around stories, comments page */
+  background-color: #000000 !important;
 }
 
 /*header padding*/
@@ -56,9 +60,11 @@ body center table table {
 }
 body#index-body #content > td {
   padding: 21px 0px;
+  /* background-color: #000 !important; */
 }
 
 table, td {
+ /* color: #fff; nothing */
  background: none !important;
 }
 table tr {
@@ -71,20 +77,24 @@ table tr td {
 
 #index-body table table {
   margin: 0 auto;
+  /* background-color: #000 !important;  tiny bg at bottom of page and title header bar */
 }
 
 /*highlight every other story line except 'More' link*/
 #index-body #content tr:nth-child(2n),
 #jobs-body #content tr:nth-child(2n) {
-  background-color: #e6e6df !important;
+  /* color: #3bad29 !important;*/
+  background-color: #262626 !important; /* every other title background */
 }
 #index-body #content tr,
 #index-body #content tr:nth-child(32) {
-  background-color: #f6f6ef !important;
+  /* color: #3bad29 !important; */
+  /* background-color: #24c419 !important; every other title background */
 }
 #index-body #content tr.on_story {
+  /* color: #3bad29 !important;*/
   border: 1px solid black;
-  background-color: #c6c6bf !important;
+  /* background-color: #d6112b !important; not sure? */
 }
 
 .blurb {
@@ -105,7 +115,7 @@ table tr td {
   left: 0;
 }
 .comments:hover {
-  color: #dd4b39;
+  color: #3bad29; /* ?? */
 }
 /* show a fallback if parsing comment number fails */
 .comments:empty::before {
@@ -129,6 +139,7 @@ table tr td {
 }
 
 #index-body #content table td.title { /* Firefox */
+  /* color: #3986f8;  n hours ago [] on story listing page */
   width: auto;
 }
 
@@ -138,6 +149,7 @@ table tr td {
   padding-bottom: 5px;
 }
 #index-body .title {
+  /* color: #3986f8; n hours ago [] on story listing page */
   padding-left: 8px;
   padding-right: 18px;
 }
@@ -148,7 +160,7 @@ table tr td {
 }
 /*new comments in black*/
 .newcomments {
-  color: #000;
+  color: #aa2b22;
 }
 a.comments:hover {
   text-decoration: underline;
@@ -245,11 +257,13 @@ a.comments:hover {
 }
 
 body#item-body .title {
+  /* color: #3986f8; */
   width: 100%;
 }
 /*story title*/
 .title {
-  color: #242222;
+  /*color: #242222; ?? */
+  color: #3986f8;
   font-size: 16px !important;
   line-height: 18px;
   font-weight: medium;
@@ -257,12 +271,17 @@ body#item-body .title {
 
 /*make self posts text black*/
 .item-header tr:nth-child(3) td {
-  color: #000 !important;
+  color: #fff !important;
 }
 
 a:link {
-  color: #202020;
+  /*color: #202020;*/
+  color: #bfbfbf !important; /* yes! but breaks hover w/o explicit hover color */
 }
+.c00 {
+  color: #bfbfbf !important; /* fg color for comments pages */
+}
+
 a:hover {
   color: #dd4b39;
 }
@@ -292,11 +311,12 @@ font[color="#ff6600"] {
 }
 
 .title a.on_story {
+  /*color: #3986f8;*/
   border-left: 2px solid #3986f8 !important;
 }
 .submitter a:hover,
 .title a:hover {
-  color: #dd4b39;
+  color: #dd4b39 !important; /* story title hover color */
 }
 
 /*user name in info subtext*/
@@ -316,7 +336,7 @@ body#index-body .submitter a:visited {
   color: #989898 !important
 }
 .comhead {
-  color: #000;
+  color: #fff;
   font-size: 11px !important;
 }
 div > .comhead {
@@ -353,11 +373,12 @@ div > .comhead {
   margin-left: 5px;
 }
 .title:first-child {
+  /* color: #fff !important; */
   padding-left: 5px !important;
 }
 .pagetop a:hover,
 .pagetop a:active {
-  color: #000;
+  color: #fff;
 }
 
 /*footer links*/
@@ -367,6 +388,7 @@ div > .comhead {
   text-align: center;
   font-size: 10px;
   color: #b8b8b8 !important;
+  background-color: #000 !important; /* background for footer links */
 }
 .yclinks a {
   color: #888 !important;
@@ -403,6 +425,7 @@ textarea, input {
 form textarea:focus, textarea:focus, input:focus, input[name="q"] {
   outline: #d74937;
   border-color: #d73937 !important;
+  background-color: #000 !important; /* algolia search box background */
 }
 form[action="http://hn.algolia.com/"],
 form[action="//hn.algolia.com/"],
@@ -430,13 +453,13 @@ br {
   display: none;
 }
 .default a:link {
-  color: #000;
+  color: #565656;
 }
 
 /*usernames are usually black*/
 #item-body .comhead a.commenter,
 #threads-body .comhead a.commenter {
-  color: #000 !important;
+  color: #565656 !important;
 }
 /*but new users are green*/
 a.new_user,
@@ -450,18 +473,23 @@ a.original_poster,
 }
 .comment font{
   display: block;
+/*  family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace !important;
+  size: 12pt !important;*/
 }
 .comment {
   display: block;
   width: 100%;
   max-width: 800px;
   line-height: 1.5em;
+  /* first comment paragraph */
+  /*font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace !important;*/
+  font-size: 12pt !important;
 }
 .comment, .dead {
-  font-size: 13px !important;
+  /*font-size: 13px !important;*/
 }
 .comment code {
-  font-size: 13px !important;
+  /*font-size: 13px !important;*/
   line-height: 20px;
 }
 .default div {
@@ -469,7 +497,9 @@ a.original_poster,
 }
 .comment p,
 .comment > font {
-  font-size: 13px !important;
+  /* 2+ comment paragraphs */
+  font-size: 12pt !important;
+  /*font-size: 13px !important;*/
   margin-top: 6px !important;
   margin-bottom: 6px !important;
 }
@@ -549,16 +579,16 @@ form[action="/r"] input[type="submit"] {
 
 /* HN Heat */
 .no-heat {
-  color: #242222 !important;
+  color: #ffe0e0 !important;
 }
 .mild {
-  color: #462628 !important;
+  color: #ffb5b5 /*#462628*/ !important;
 }
 .medium {
-  color: #702e30 !important;
+  color: #ff6b6b /*#702e30*/ !important;
 }
 .hot {
-  color: #d93b3d !important;
+  color: #ff1c1c /*#d93b3d*/ !important;
 }
 
 #jobs-body table table {
